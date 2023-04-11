@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnaSayfa</title>
+    @*<script>alert("Merhaba Dünya")</script>*@
+    <script src="~/Home/Mesaj"></script>
+    <script src="/Home/ButtonMesaj"></script>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+            {
+                @Html.TextBox("ad","", new {placeholder="Adınız"})
+            <br />
+            <hr />
+
+            @Html.TextBox("soyad", "", new {placeholder="Soyadınız"})
+            <hr />
+            <button type="submit" >Kaydet</button>
+            }
+    </div>
+    <div>
+        @if (ViewBag.liste != null)
+            {
+                <ul>
+                    @foreach(string item in (List<string>)ViewBag.liste)
+                {
+                    <li>
+                        @item
+                    </li>
+                }
+                </ul>
+            }
+    </div>
+    <div>
+        <hr />
+    </div>
+    <div>
+        <input type="button" value="Mesaj Ver" onclick="button_click();"/>
+    </div>
+</body>
+</html>

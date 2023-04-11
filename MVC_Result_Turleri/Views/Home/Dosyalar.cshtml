@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dosyalar</title>
+</head>
+<body>
+    <div> Dosyalar
+    </div>
+    <div>
+        @Html.ActionLink("PDF Dosya görüntüle","PDFDosyaGoster","Home")
+    </div>
+    <div>
+        @Html.ActionLink("Metin Dosyası İndir","MetinDosyasiIndir","Home")
+    </div>
+    <div>
+        @Html.Partial("_KategoriPartialPage1");
+        @*@Html.Action("KategoriGetir")*@
+    </div>
+    <div>
+        @*@Html.Partial("_KategoriPartialPage2")*@
+        @Html.Action("KategoriGetir")
+    </div>
+</body>
+</html>
